@@ -28,25 +28,25 @@ var _jsYaml = require('js-yaml');
 
 var _jsYaml2 = _interopRequireDefault(_jsYaml);
 
-function getMetadataIndices(mem, item, i) {
+function findMetadataIndices(mem, item, i) {
   if (/^---/.test(item)) {
     mem.push(i);
   }
   return mem;
 }
 
-function getMetadata(_ref) {
+function parseMetadata(_ref) {
   var lines = _ref.lines;
   var metadataIndices = _ref.metadataIndices;
 
   if (metadataIndices.length > 0) {
-    var tempMetadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1]);
-    return _jsYaml2['default'].safeLoad(tempMetadata.join('\n'));
+    var metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1]);
+    return _jsYaml2['default'].safeLoad(metadata.join('\n'));
   }
   return {};
 }
 
-function getContent(_ref2) {
+function parseContent(_ref2) {
   var lines = _ref2.lines;
   var metadataIndices = _ref2.metadataIndices;
 
@@ -59,10 +59,10 @@ function getContent(_ref2) {
 exports['default'] = function (contents) {
   var lines = contents.split('\n').map(function (line) {
     return line.trim();
-  });
-  var metadataIndices = lines.reduce(getMetadataIndices, []);
-  var metadata = getMetadata({ lines: lines, metadataIndices: metadataIndices });
-  var content = getContent({ lines: lines, metadataIndices: metadataIndices });
+  }),
+      metadataIndices = lines.reduce(findMetadataIndices, []),
+      metadata = parseMetadata({ lines: lines, metadataIndices: metadataIndices }),
+      content = parseContent({ lines: lines, metadataIndices: metadataIndices });
   return { metadata: metadata, content: content };
 };
 
