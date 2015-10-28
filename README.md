@@ -30,6 +30,8 @@ would be parsed as
 }
 ```
 
+_Note: This tool expects that your Markdown metadata has `---` boundaries, as shown above._
+
 ## Usage
 
 ### Node/Browserify/CommonJS
