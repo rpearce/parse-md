@@ -1,6 +1,6 @@
 {
   "name": "parse-md",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Separate markdown file's metadata from its content",
   "main": "lib/index.js",
   "repository": {
