@@ -1,5 +1,5 @@
 # ParseMD
-This library exists as a way to pass a read markdown file, have its metadata returned as an object and its content returned as HTML.
+This library exists as a way to pass a markdown file's content and have its metadata and markup returned as an object.
 
 Note that it is not trying to do anything but solve the markdown metadata vs. content parsing problem.
 
