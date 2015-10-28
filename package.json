@@ -1,0 +1,46 @@
+{
+  "name": "parse-md",
+  "version": "0.1.0",
+  "description": "Separate markdown file's metadata from its content",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rpearce/parse-md"
+  },
+  "scripts": {
+    "test": "find ./test -name '*.test.js' | xargs mocha --require ./test/mocha-babel.js --recursive ./test",
+    "clean": "rm -r dist/ && mkdir dist/ && rm lib/index.js",
+    "build:dist:dev": "browserify lib/browser.js -o dist/parse-md.js",
+    "build:dist:prod": "browserify lib/browser.js | uglifyjs > dist/parse-md.min.js",
+    "build:dist": "npm run build:dist:dev && npm run build:dist:prod",
+    "build:lib": "babel lib/parse-md.js -o lib/index.js",
+    "build": "npm run build:lib && npm run build:dist",
+    "prebuild": "npm run clean"
+  },
+  "keywords": [
+    "markdown",
+    "metadata",
+    "md",
+    "meta"
+  ],
+  "author": "Robert Pearce",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^3.4.3",
+    "marked": "^0.3.5"
+  },
+  "devDependencies": {
+    "babelify": "^6.4.0",
+    "browserify": "^12.0.0",
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "uglify-js": "^2.5.0"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify"
+      ]
+    ]
+  }
+}
