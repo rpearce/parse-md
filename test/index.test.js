@@ -1,4 +1,4 @@
-import ParseMD from '../../lib';
+import ParseMD from '../index';
 import { expect } from 'chai';
 import marked from 'marked';
 

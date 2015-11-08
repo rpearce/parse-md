@@ -12,8 +12,6 @@ var _marked2 = _interopRequireDefault(_marked);
 
 var _jsYaml = require('js-yaml');
 
-var _jsYaml2 = _interopRequireDefault(_jsYaml);
-
 function findMetadataIndices(mem, item, i) {
   if (/^---/.test(item)) {
     mem.push(i);
@@ -27,7 +25,7 @@ function parseMetadata(_ref) {
 
   if (metadataIndices.length > 0) {
     var metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1]);
-    return _jsYaml2['default'].safeLoad(metadata.join('\n'));
+    return (0, _jsYaml.safeLoad)(metadata.join('\n'));
   }
   return {};
 }

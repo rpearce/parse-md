@@ -2,18 +2,18 @@
   "name": "parse-md",
   "version": "0.1.2",
   "description": "Separate markdown file's metadata from its content",
-  "main": "lib/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rpearce/parse-md"
   },
   "scripts": {
     "test": "find ./test -name '*.test.js' | xargs mocha --require ./test/mocha-babel.js --recursive ./test",
-    "clean": "rm -r dist/ && mkdir dist/ && rm lib/index.js",
+    "clean": "rm -rf dist/ && mkdir dist/ && rm -f index.js",
     "build:dist:dev": "browserify lib/browser.js -o dist/parse-md.js",
     "build:dist:prod": "browserify lib/browser.js | uglifyjs > dist/parse-md.min.js",
     "build:dist": "npm run build:dist:dev && npm run build:dist:prod",
-    "build:lib": "babel lib/parse-md.js -o lib/index.js",
+    "build:lib": "babel lib/parse-md.js -o index.js",
     "build": "npm run build:lib && npm run build:dist",
     "prebuild": "npm run clean",
     "prepublish": "npm run build && npm test"
