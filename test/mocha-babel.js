@@ -1,3 +1,2 @@
-require('babel/register')({
-  'optional': ['es7.exportExtensions']
-});
+require('babel-core/register');
+require('babel-polyfill');
