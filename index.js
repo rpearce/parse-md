@@ -35,9 +35,7 @@ var parseContent = function parseContent(_ref2) {
 };
 
 var parseMD = function parseMD(contents) {
-  var lines = contents.split('\n').map(function (line) {
-    return line.trim();
-  });
+  var lines = contents.split('\n');
   var metadataIndices = lines.reduce(findMetadataIndices, []);
   var metadata = parseMetadata({ lines: lines, metadataIndices: metadataIndices });
   var content = parseContent({ lines: lines, metadataIndices: metadataIndices });

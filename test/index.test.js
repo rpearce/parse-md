@@ -8,12 +8,12 @@ describe('parseMD', function() {
       const metaDescription = 'ABC123';
       const body = '# This is our house';
       const markdown = `---
-        title: ${metaTitle}
-        description: ${metaDescription}
-        ---
-        ${body}`,
-        { metadata, content } = parseMD(markdown),
-        { title, description } = metadata;
+title: ${metaTitle}
+description: ${metaDescription}
+---
+${body}`,
+{ metadata, content } = parseMD(markdown),
+{ title, description } = metadata;
 
       expect(title).to.equal(metaTitle);
       expect(description).to.equal(metaDescription);
