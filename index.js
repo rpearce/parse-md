@@ -14,8 +14,8 @@ var findMetadataIndices = function findMetadataIndices(mem, item, i) {
 };
 
 var parseMetadata = function parseMetadata(_ref) {
-  var lines = _ref.lines;
-  var metadataIndices = _ref.metadataIndices;
+  var lines = _ref.lines,
+      metadataIndices = _ref.metadataIndices;
 
   if (metadataIndices.length > 0) {
     var metadata = lines.slice(metadataIndices[0] + 1, metadataIndices[1]);
@@ -25,8 +25,8 @@ var parseMetadata = function parseMetadata(_ref) {
 };
 
 var parseContent = function parseContent(_ref2) {
-  var lines = _ref2.lines;
-  var metadataIndices = _ref2.metadataIndices;
+  var lines = _ref2.lines,
+      metadataIndices = _ref2.metadataIndices;
 
   if (metadataIndices.length > 0) {
     lines = lines.slice(metadataIndices[1] + 1, lines.length);
