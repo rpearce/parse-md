@@ -1,4 +1,8 @@
 # parseMD
+
+![](https://img.shields.io/npm/dm/parse-md.svg)
+![](https://img.shields.io/npm/v/parse-md.svg)
+
 This library exists as a way to pass a markdown file's content and have its metadata and markdown returned as an object containing `metadata` and `content` keys.
 
 Note that it is not trying to do anything but solve the markdown metadata vs. content parsing problem and is _not parsing the markdown body, itself._ You can use something like [marked](https://github.com/chjj/marked) for that.
