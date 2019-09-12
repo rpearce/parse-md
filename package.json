@@ -2,35 +2,77 @@
   "name": "parse-md",
   "version": "1.0.3",
   "description": "Separate markdown file's metadata from its content",
-  "main": "index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rpearce/parse-md"
+    "url": "git@github.com:rpearce/parse-md.git"
   },
-  "scripts": {
-    "test": "find ./test -name '*.test.js' | xargs mocha --require ./test/mocha-babel.js --recursive ./test",
-    "clean": "rm -f index.js",
-    "build": "babel lib/parse-md.js -o index.js",
-    "prebuild": "npm run clean",
-    "prepublish": "npm run build && npm test"
-  },
+  "homepage": "https://github.com/rpearce/hex",
+  "bugs": "https://github.com/rpearce/hex/issues",
+  "author": "Robert Pearce <me@robertwpearce.com>",
+  "contributors": [
+    "Robert Pearce <me@robertwpearce.com> (https://robertwpearce.com)"
+  ],
+  "license": "MIT",
   "keywords": [
     "markdown",
     "metadata",
     "md",
-    "meta"
+    "meta",
+    "parse"
   ],
-  "author": "Robert Pearce",
-  "license": "MIT",
+  "tags": [
+    "markdown",
+    "metadata",
+    "md",
+    "meta",
+    "parse"
+  ],
+  "files": [
+    "AUTHORS",
+    "LICENSE",
+    "README.md",
+    "dist/"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "run-s clean build:js",
+    "build:js": "rollup -c rollup.config.js",
+    "clean": "rm -rf dist",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage:report": "nyc report --reporter=lcov && echo \"view coverage: ./coverage/lcov-report/index.html\"",
+    "lint": "eslint .",
+    "prepublishOnly": "run-p lint test && npm run build",
+    "test": "nyc ava --verbose"
+  },
   "dependencies": {
-    "js-yaml": "^3.4.3"
+    "js-yaml": "^3.13.1"
   },
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.5.1",
-    "babel-core": "^6.5.2",
-    "babel-preset-es2015": "^6.5.0",
-    "chai": "^3.4.0",
-    "mocha": "^2.3.3"
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "all-contributors-cli": "^6.9.0",
+    "ava": "^2.3.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "nyc": "^14.1.1",
+    "rollup": "^1.21.2",
+    "rollup-plugin-auto-external": "^3.0.0-alpha.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
