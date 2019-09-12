@@ -1,4 +1,5 @@
 # parseMD
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 ![](https://img.shields.io/npm/dm/parse-md.svg)
 ![](https://img.shields.io/npm/v/parse-md.svg)
@@ -74,3 +75,28 @@ console.log(content); // "# My first post..."
 1. Make your changes and push your branch to your GitHub repo
 1. Create a pull request from your branch to this repo's master
 1. When all is merged, pull down the upstream changes to your master
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://robertwpearce.com"><img src="https://avatars2.githubusercontent.com/u/592876?v=4" width="100px;" alt="Robert Pearce"/><br /><sub><b>Robert Pearce</b></sub></a><br /><a href="https://github.com/Robert Pearce <me@robertwpearce.com>/parse-md/commits?author=rpearce" title="Code">💻</a> <a href="https://github.com/Robert Pearce <me@robertwpearce.com>/parse-md/commits?author=rpearce" title="Documentation">📖</a> <a href="#example-rpearce" title="Examples">💡</a> <a href="#ideas-rpearce" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Robert Pearce <me@robertwpearce.com>/parse-md/commits?author=rpearce" title="Tests">⚠️</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
