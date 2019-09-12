@@ -1,12 +1,14 @@
 # parseMD
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![npm version](https://img.shields.io/npm/v/@rpearce/parse-md.svg)](https://www.npmjs.com/package/@rpearce/parse-md) [![npm downloads](https://img.shields.io/npm/dm/@rpearce/parse-md.svg)](https://www.npmjs.com/package/@rpearce/parse-md) [![Build Status](https://travis-ci.org/rpearce/parse-md.svg?branch=master)](https://travis-ci.org/rpearce/parse-md) [![Coverage Status](https://coveralls.io/repos/github/rpearce/parse-md/badge.svg?branch=master)](https://coveralls.io/github/rpearce/parse-md?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/8e4debef4b9f0e8acd6e/maintainability)](https://codeclimate.com/github/rpearce/parse-md/maintainability)
 
-![](https://img.shields.io/npm/dm/parse-md.svg)
-![](https://img.shields.io/npm/v/parse-md.svg)
+This library exists as a way to pass a markdown file's content and have its
+metadata and markdown returned as an object containing `metadata` and `content`
+keys.
 
-This library exists as a way to pass a markdown file's content and have its metadata and markdown returned as an object containing `metadata` and `content` keys.
-
-Note that it is not trying to do anything but solve the markdown metadata vs. content parsing problem and is _not parsing the markdown body, itself._ You can use something like [marked](https://github.com/chjj/marked) for that.
+Note that it is not trying to do anything but solve the markdown metadata vs.
+content parsing problem and is _not parsing the markdown body, itself._ You can
+use something like [marked](https://github.com/chjj/marked) for that.
 
 ## What It Does
 For example,
@@ -39,42 +41,38 @@ _Note: This tool expects that your Markdown metadata has `---` boundaries, as sh
 ### Node/CommonJS
 First, install it via NPM and save it to your project:
 
-```sh
-$ npm install parse-md --save
+```
+$ npm i parse-md
 ```
 
 Import it where you need it:
 
 ```js
-import parseMD from 'parse-md';
+import parseMD from 'parse-md'
 ```
 
-or if you are using < ES2015,
+or if you are using commonjs,
 
 ```js
-var parseMD = require('parse-md');
+const parseMD = require('parse-md')
 ```
 
 and then pass it a Markdown file's content. Here is one method by which
 you might do so:
 
 ```js
-const fileContents = fs.readFileSync('posts/first.md', 'utf8');
-const { metadata, content } = parseMD(fileContents);
+const fileContents = fs.readFileSync('posts/first.md', 'utf8')
+const { metadata, content } = parseMD(fileContents)
 
 console.log(metadata); // { title: 'Great first post', description: 'This is my first great post. Rawr' }
 console.log(content); // "# My first post..."
 ```
 
-## Contribute
-
-1. Check out the [issues](https://github.com/rpearce/parse-md/issues)
-1. Fork this repository
-1. Clone your fork
-1. Check out a feature branch (`$ git checkout -b my-feature`)
-1. Make your changes and push your branch to your GitHub repo
-1. Create a pull request from your branch to this repo's master
-1. When all is merged, pull down the upstream changes to your master
+## Links
+* [`Authors`](./AUTHORS)
+* [`Changelog`](./CHANGELOG.md)
+* [`Contributing`](./CONTRIBUTING.md)
+* [`Code of Conduct`](./CODE_OF_CONDUCT.md)
 
 ## Contributors ✨
 
