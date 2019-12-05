@@ -54,7 +54,7 @@ import parseMD from 'parse-md'
 or if you are using commonjs,
 
 ```js
-const parseMD = require('parse-md')
+const parseMD = require('parse-md').default
 ```
 
 and then pass it a Markdown file's content. Here is one method by which
