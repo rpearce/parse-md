@@ -5,7 +5,7 @@ import resolve from 'rollup-plugin-node-resolve'
 
 const plugins = [
   external(),
-  resolve({ browser: true }),
+  resolve(),
   commonjs({ include: /node_modules/ }),
   babel({
     configFile: './babel.config.js',
@@ -16,24 +16,24 @@ const plugins = [
 ]
 
 const esm = {
-  name: '@rpearce/hex',
-  file: './dist/index.esm.js',
-  format: 'esm',
+  dir: './dist/esm',
   exports: 'named',
+  format: 'esm',
+  name: 'parse-md',
   sourcemap: true
 }
 
 const cjs = {
-  name: '@rpearce/hex',
-  file: './dist/index.cjs.js',
-  format: 'cjs',
+  dir: './dist/cjs',
   exports: 'named',
+  format: 'cjs',
+  name: 'parse-md',
   sourcemap: true
 }
 
 const config = [
   {
-    input: './source/index.js',
+    input: ['./source/index.js'],
     output: [esm, cjs],
     plugins
   }
