@@ -22,6 +22,15 @@
         "ideas",
         "test"
       ]
+    },
+    {
+      "login": "justinchan23",
+      "name": "Justin Chan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/45015017?v=4",
+      "profile": "https://www.justinchan.ca",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7
