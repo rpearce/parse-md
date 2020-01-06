@@ -1,7 +1,9 @@
+import { dirname } from 'path'
 import babel from 'rollup-plugin-babel'
-import commonjs from 'rollup-plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs'
 import external from 'rollup-plugin-auto-external'
-import resolve from 'rollup-plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
+import pkg from './package.json'
 
 const plugins = [
   external(),
@@ -16,7 +18,7 @@ const plugins = [
 ]
 
 const esm = {
-  dir: './dist/esm',
+  dir: dirname(pkg.module),
   exports: 'named',
   format: 'esm',
   name: 'parse-md',
@@ -24,7 +26,7 @@ const esm = {
 }
 
 const cjs = {
-  dir: './dist/cjs',
+  dir: dirname(pkg.main),
   exports: 'named',
   format: 'cjs',
   name: 'parse-md',
