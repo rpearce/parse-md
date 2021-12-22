@@ -1,4 +1,3 @@
-import { dirname } from 'path'
 import babel from 'rollup-plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import external from 'rollup-plugin-auto-external'
@@ -18,7 +17,8 @@ const plugins = [
 ]
 
 const esm = {
-  dir: dirname(pkg.module),
+  // needs to have an .mjs extension for ESM to work when pkg.type !== "module"
+  file: pkg.exports['.'].import,
   exports: 'named',
   format: 'esm',
   name: 'parse-md',
@@ -26,7 +26,7 @@ const esm = {
 }
 
 const cjs = {
-  dir: dirname(pkg.main),
+  file: pkg.exports['.'].require,
   exports: 'named',
   format: 'cjs',
   name: 'parse-md',

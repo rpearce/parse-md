@@ -1,4 +1,8 @@
-import { safeLoad } from 'js-yaml'
+import jsYaml from 'js-yaml'
+
+// we've got to do it this way because the ES importer in Node can't
+// destructure CommonJS modules at import time
+const { safeLoad } = jsYaml
 
 const findMetadataIndices = (mem, item, i) => {
   if (/^---/.test(item)) {
