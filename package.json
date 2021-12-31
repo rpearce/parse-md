@@ -41,7 +41,7 @@
   "scripts": {
     "build": "run-s clean build:js",
     "build:js": "rollup -c ./rollup.config.js",
-    "build::js:watch": "npm run build:js -- -w",
+    "build:js:watch": "npm run build:js -- -w",
     "clean": "rm -rf dist",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
