@@ -31,6 +31,17 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "alexghr",
+      "name": "Alex Gherghisan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3816165?v=4",
+      "profile": "https://www.alexghr.me",
+      "contributions": [
+        "code",
+        "bug",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7
