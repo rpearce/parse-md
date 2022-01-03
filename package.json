@@ -16,6 +16,10 @@
   "homepage": "https://github.com/rpearce/parse-md",
   "bugs": "https://github.com/rpearce/parse-md/issues",
   "author": "Robert Pearce <me@robertwpearce.com>",
+  "contributors": [
+    "Robert Pearce <me@robertwpearce.com> (https://robertwpearce.com)",
+    "Alex Gherghisan <> (https://www.alexghr.me)"
+  ],
   "license": "MIT",
   "keywords": [
     "markdown",
@@ -32,50 +36,38 @@
     "parse"
   ],
   "files": [
-    "AUTHORS",
     "LICENSE",
     "README.md",
     "dist/"
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "run-s clean build:js",
-    "build:js": "rollup -c ./rollup.config.js",
-    "build:js:watch": "npm run build:js -- -w",
-    "clean": "rm -rf dist",
+    "build": "rm -rf dist && run-p build:cjs build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "ci": "run-p lint test build",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "coverage:report": "nyc report --reporter=lcov && echo \"view coverage: ./coverage/lcov-report/index.html\"",
     "lint": "eslint .",
     "prepublishOnly": "run-p lint test && npm run build",
-    "test": "nyc ava --verbose"
+    "test": "jest"
   },
   "dependencies": {
-    "js-yaml": "^3.13.1"
+    "js-yaml": "^4.1.0",
+    "tslib": "^2.0.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/polyfill": "^7.7.0",
-    "@babel/preset-env": "^7.7.7",
-    "@babel/register": "^7.7.7",
-    "@rollup/plugin-commonjs": "^11.0.1",
-    "@rollup/plugin-node-resolve": "^6.1.0",
+    "@types/jest": "^27.0.2",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^17.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
     "all-contributors-cli": "^6.12.0",
-    "ava": "^2.4.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "coveralls": "^3.0.9",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
+    "eslint": "^8.1.0",
+    "eslint-plugin-jest": "^25.2.2",
+    "jest": "^27.3.1",
     "npm-run-all": "^4.1.5",
-    "nyc": "^15.0.0",
-    "prettier": "^1.19.1",
-    "rollup": "^1.28.0",
-    "rollup-plugin-auto-external": "^3.0.0-alpha.0",
-    "rollup-plugin-babel": "^4.3.3"
+    "typescript": "^4.4.4",
+    "ts-jest": "^27.0.7"
   }
 }

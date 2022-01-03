@@ -1,23 +1,60 @@
 module.exports = {
   env: {
-    browser: true,
+    browser: false,
     es6: true,
-    node: true
+    jest: true,
+    node: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:prettier/recommended'
+    'plugin:@typescript-eslint/recommended',
   ],
+  overrides: [],
   parserOptions: {
-    ecmaVersion: 2019,
-    sourceType: 'module'
+    ecmaVersion: 2020,
+    sourceType: 'module',
   },
-  plugins: [],
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    '@typescript-eslint',
+    'jest',
+  ],
   rules: {
-    'indent': ['error', 2, { 'SwitchCase': 1 }],
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-use-before-define': 'off',
+    'comma-dangle': ['error', {
+      arrays: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'ignore',
+      imports: 'always-multiline',
+      objects: 'always-multiline',
+    }],
+    curly: ['error', 'all'],
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
+    'eol-last': 'error',
+    indent: ['error', 2, { 'SwitchCase': 1 }],
+    'keyword-spacing': 'error',
+    'linebreak-style': ['error', 'unix'],
+    'max-len': [
+      'error',
+      {
+        code: 80,
+        ignoreComments: true,
+        ignoreTemplateLiterals: true,
+        ignoreStrings: true,
+      },
+    ],
     'no-trailing-spaces': 'error',
+    'no-use-before-define': ['error', {
+      functions: false,
+      classes: true,
+      variables: false,
+    }],
     'object-curly-spacing': ['error', 'always'],
-    'quotes': ['error', 'single', { 'allowTemplateLiterals': true }],
-    'semi': ['error', 'never']
-  }
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    semi: ['error', 'never'],
+    'space-in-parens': ['error', 'never'],
+    'space-infix-ops': ['error'],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+  },
 }

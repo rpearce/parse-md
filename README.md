@@ -1,6 +1,6 @@
 # parseMD
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-[![npm version](https://img.shields.io/npm/v/parse-md.svg)](https://www.npmjs.com/package/parse-md) [![npm downloads](https://img.shields.io/npm/dm/parse-md.svg)](https://www.npmjs.com/package/parse-md) [![Build Status](https://travis-ci.org/rpearce/parse-md.svg?branch=main)](https://travis-ci.org/rpearce/parse-md) [![Coverage Status](https://coveralls.io/repos/github/rpearce/parse-md/badge.svg?branch=main)](https://coveralls.io/github/rpearce/parse-md?branch=main) [![Maintainability](https://api.codeclimate.com/v1/badges/8e4debef4b9f0e8acd6e/maintainability)](https://codeclimate.com/github/rpearce/parse-md/maintainability)
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-) [![npm version](https://img.shields.io/npm/v/parse-md.svg?style=flat-square)](https://www.npmjs.com/package/parse-md) [![npm downloads](https://img.shields.io/npm/dm/parse-md.svg?style=flat-square)](https://www.npmjs.com/package/parse-md) [![bundlephobia size](https://flat.badgen.net/bundlephobia/minzip/parse-md)](https://bundlephobia.com/result?p=parse-md)
 
 This library exists as a way to pass a markdown file's content and have its
 metadata and markdown returned as an object containing `metadata` and `content`
@@ -11,6 +11,7 @@ content parsing problem and is _not parsing the markdown body, itself._ You can
 use something like [marked](https://github.com/chjj/marked) for that.
 
 ## What It Does
+
 For example,
 
 ```md
@@ -34,15 +35,17 @@ would be parsed as
 }
 ```
 
-_Note: This tool expects that your Markdown metadata has `---` boundaries, as shown above._
+_Note: This tool expects that your Markdown metadata has `---` boundaries, as
+shown above._
 
 ## Usage
 
 ### Node/CommonJS
+
 First, install it via NPM and save it to your project:
 
-```
-$ npm i parse-md
+```sh
+npm i parse-md
 ```
 
 Import it where you need it:
@@ -69,7 +72,7 @@ console.log(content); // "# My first post..."
 ```
 
 ## Links
-* [`Authors`](./AUTHORS)
+
 * [`Changelog`](./CHANGELOG.md)
 * [`Contributing`](./CONTRIBUTING.md)
 * [`Code of Conduct`](./CODE_OF_CONDUCT.md)
