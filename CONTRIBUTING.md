@@ -4,42 +4,37 @@
 1. [Fork](https://guides.github.com/activities/forking/) this repository
 1. [Clone](https://help.github.com/articles/cloning-a-repository/) your fork
 1. Add the upstream project (this one) as a git remote:
-    ```
-    $ git remote add upstream git@github.com:rpearce/parse-md.git
-    $ git fetch upstream
-    $ git rebase upstream/main
+    ```sh
+    git remote add upstream git@github.com:rpearce/parse-md.git
+    git fetch upstream
+    git rebase upstream/main
     ```
 1. Check out a feature branch
-    ```
-    $ git checkout -b my-feature
+    ```sh
+    git checkout -b my-feature
     ```
 1. Make your changes
 1. Push your branch to your GitHub repo
-    ```
-    $ git push origin my-feature
+    ```sh
+    git push origin my-feature
     ```
 1. Create a [pull request](https://help.github.com/articles/about-pull-requests/)
    from your branch to this repo's `main` branch
 1. When all is merged, pull down the upstream changes to your main
-    ```
-    $ git fetch upstream
-    $ git merge upstream/main
+    ```sh
+    git fetch upstream
+    git rebase upstream/main
     ```
 1. Delete your feature branch (locally and then on GitHub)
-    ```
-    $ git branch -D my-feature
-    $ git push origin :my-feature
+    ```sh
+    git branch -D my-feature
+    git push origin :my-feature
     ```
 
 ## Testing
-Tests are located in the `test/` folder. Here's how to run them:
 
-```
-$ yarn test
-```
+Tests are located in the `__tests__/` folder. Here's how to run them:
 
-To watch for changes:
-
-```
-$ yarn test --watch
+```sh
+npm test
 ```
