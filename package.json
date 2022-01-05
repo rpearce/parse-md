@@ -1,12 +1,12 @@
 {
   "name": "parse-md",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Separate markdown file's metadata from its content",
-  "main": "./dist/cjs/index.cjs",
+  "main": "./dist/cjs/index.js",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.cjs"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     }
   },
   "repository": {
