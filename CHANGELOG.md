@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 * Conditional exports fields not pointing to the right files
+* Set `"type": "module"` in package.json since we can't output `.mjs` with TS
 
 ## [3.0.0] - 2022-01-02
 
