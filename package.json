@@ -2,14 +2,8 @@
   "name": "parse-md",
   "version": "3.0.1",
   "description": "Separate markdown file's metadata from its content",
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/index.js",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:rpearce/parse-md.git"
@@ -43,9 +37,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "rm -rf dist && run-p build:cjs build:esm",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json",
+    "build": "rm -rf dist && tsc",
     "ci": "run-p lint test build",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
@@ -54,8 +46,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
-    "tslib": "^2.0.3"
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
