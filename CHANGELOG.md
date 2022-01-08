@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.0.2] - 2022-01-08
+
+### Fixed
+
+* Actually drop commonjs support
+* Drop `tslib` dependency
+* Fix typescript declaration importing `js-yaml`
+
 ## [3.0.1] - 2022-01-04
 
 ### Fixed
@@ -17,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 
 * Rewrote in TypeScript (PR #27)
+* BREAKING CHANGE: commonjs no longer outputted in v3.x
 
 ## [2.0.5] - 2021-12-31
 
