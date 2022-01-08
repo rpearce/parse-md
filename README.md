@@ -40,35 +40,23 @@ shown above._
 
 ## Usage
 
-### Node/CommonJS
-
-First, install it via NPM and save it to your project:
+Installation:
 
 ```sh
 npm i parse-md
 ```
 
-Import it where you need it:
+Import it where you need it, and then pass it a Markdown file's content:
 
-```js
+```javascript
+import fs from 'fs'
 import parseMD from 'parse-md'
-```
 
-or if you are using commonjs,
-
-```js
-const parseMD = require('parse-md').default
-```
-
-and then pass it a Markdown file's content. Here is one method by which
-you might do so:
-
-```js
 const fileContents = fs.readFileSync('posts/first.md', 'utf8')
 const { metadata, content } = parseMD(fileContents)
 
-console.log(metadata); // { title: 'Great first post', description: 'This is my first great post. Rawr' }
-console.log(content); // "# My first post..."
+console.log(metadata) // { title: 'Great first post', description: 'This is my first great post. Rawr' }
+console.log(content) // "# My first post..."
 ```
 
 ## Links
@@ -76,6 +64,15 @@ console.log(content); // "# My first post..."
 * [`Changelog`](./CHANGELOG.md)
 * [`Contributing`](./CONTRIBUTING.md)
 * [`Code of Conduct`](./CODE_OF_CONDUCT.md)
+
+## Note about CommonJS
+
+If you need to CommonJS module support, use version `2.x`, and require it like
+this:
+
+```javascript
+const parseMD = require('parse-md').default
+```
 
 ## Contributors ✨
 
