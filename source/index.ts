@@ -1,4 +1,4 @@
-import jsYaml from 'js-yaml'
+import { load } from 'js-yaml'
 
 // =============================================================================
 type Content      = string
@@ -25,7 +25,7 @@ interface ParseMeta {
   ({ lines, metaIndices }: {
     lines:        Line[],
     metaIndices:  MetaIndex[],
-  }): EmptyObject | ReturnType<typeof jsYaml.load>
+  }): EmptyObject | unknown
 }
 
 const emptyObject = {}
@@ -33,7 +33,7 @@ const emptyObject = {}
 const parseMeta: ParseMeta = ({ lines, metaIndices }) => {
   if (metaIndices.length > 0) {
     const metadata = lines.slice(metaIndices[0] + 1, metaIndices[1])
-    return jsYaml.load(metadata.join('\n'))
+    return load(metadata.join('\n'))
   }
 
   return emptyObject
